@@ -1,4 +1,4 @@
-Whole body control assignment
+## Whole body control assignment
 
 Use 3R Planar manipulator (uniform mass rods of mass m_i and legth L_i). Torque tau_i is applied in each joint.
 
@@ -7,7 +7,7 @@ Design a control system which:
 - realizes circular motion with minimal sum of tau_i^2 
 - realizes circular motion with torque limits |tau_i| < tau_i_max
 
-Installation:
+### Installation:
 
 1) Use Linux/Ubuntu
 
@@ -32,13 +32,13 @@ Installation:
 
 6) Run main.py
 
-What was done:
+### What was done:
 1) Created URDF file for 3DOF  with joint constraints
 2) Realized control scheme via TSID in PyBullet (position and torque control)
 3) Realized whole trajectory control optimization via Crocoddyl library with open-loop testing in PyBullet  (position and torque control)
 4) Added comparison plots of torques with squared sum of torques and end effector tracking error.
 
-Resume:
+### Resume:
 
 - We can see that TSID can track trajectory good and have better overall squared sum of applied torques in such type of task.
 
@@ -46,6 +46,6 @@ Resume:
 
 - Still have no working solution for Crocoddyl -> Pybullet torque control scheme (need more time).
 
-Further steps:
+### Further steps:
 1) Align Crocoddyl and PyBullet dynamics models, maybe tune cost weights for working torque control. Or just use tsid for Crocoddyl trajectory execution (not needed in simple predefined circular motion).
 2) Reorganize code structure to reduce doubling of pybullet simulation code.
