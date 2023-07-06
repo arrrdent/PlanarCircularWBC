@@ -14,24 +14,23 @@ Installation:
 2) Install Crocoddyl and its Python bindings:
 
     sudo apt install robotpkg-py3*-crocoddyl
-3)  Install pinocchio 
+3) Install pinocchio 
 
     https://stack-of-tasks.github.io/pinocchio/download.html
     
     (can try pip install pin)
-3) 
-
-    Configure your environment variables:
+4) Configure your environment variables:
     
     export PATH=/opt/openrobots/bin:$PATH
     export PKG_CONFIG_PATH=/opt/openrobots/lib/pkgconfig:$PKG_CONFIG_PATH
     export LD_LIBRARY_PATH=/opt/openrobots/lib:$LD_LIBRARY_PATH
     export PYTHONPATH=/opt/openrobots/lib/python3.*/site-packages:$PYTHONPATH
 
-4) Then for Pycharm you can add to configuration next environment variable:
+5) Then for Pycharm you can add to configuration next environment variable:
 
     PYTHONPATH=/opt/openrobots/lib/python3.*/site-packages
-5)  Run main.py
+
+6) Run main.py
 
 What was done:
 1) Created URDF file for 3DOF  with joint constraints
