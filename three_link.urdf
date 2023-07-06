@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- let's assume our links are uniform mass rods of mass m_i and length L_i
+https://en.wikipedia.org/wiki/List_of_moments_of_inertia#List_of_3D_inertia_tensors
+I = [m*l*l/3,0,0,0,0,m*l*l/3]
+-->
+<robot name="three_link">
+    <link name="base_link">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <cylinder length="0.0" radius="0.0"/>
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint
+            name="joint_1"
+            type="revolute">
+        <origin
+                xyz="0 0 0"
+                rpy="1.57 0 0"/>
+        <parent
+                link="base_link"/>
+        <child
+                link="link_1"/>
+        <axis
+                xyz="0 0 1"/>
+        <limit
+                lower="-3.14"
+                upper="3.14"
+                effort="20"
+                velocity="5"/>
+        <dynamics
+                damping="0.05"
+                friction="0.05"/>
+    </joint>
+    <link name="link_1">
+        <inertial>
+            <origin
+                    xyz="0 0.15 0"
+                    rpy="1.57 0 0"/>
+            <mass
+                    value="0.5"/>
+            <inertia
+                    ixx="0.03"
+                    ixy="0"
+                    ixz="0"
+                    iyy="0"
+                    iyz="0"
+                    izz="0.03"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="grey"/>
+        </collision>
+    </link>
+
+    <joint
+            name="joint_2"
+            type="revolute">
+        <origin
+                xyz="0 0.3 0"
+                rpy="0 0 0"/>
+        <parent
+                link="link_1"/>
+        <child
+                link="link_2"/>
+        <axis
+                xyz="0 0 1"/>
+        <limit
+                lower="-3.14"
+                upper="3.14"
+                effort="20"
+                velocity="5"/>
+        <dynamics
+                damping="0.05"
+                friction="0.05"/>
+    </joint>
+    <link name="link_2">
+        <inertial>
+            <origin
+                    xyz="0 0.15 0"
+                    rpy="1.57 0 0" />
+            <mass
+                    value="0.5"/>
+            <inertia
+                    ixx="0.03"
+                    ixy="0"
+                    ixz="0"
+                    iyy="0"
+                    iyz="0"
+                    izz="0.03"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0" />
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="grey"/>
+        </collision>
+    </link>
+
+    <joint
+            name="joint_3"
+            type="revolute">
+        <origin
+                xyz="0 0.3 0"
+                rpy="0 0 0"/>
+        <parent
+                link="link_2"/>
+        <child
+                link="link_3"/>
+        <axis
+                xyz="0 0 1"/>
+        <limit
+                lower="-3.14"
+                upper="3.14"
+                effort="20"
+                velocity="5"/>
+        <dynamics
+                damping="0.05"
+                friction="0.05"/>
+    </joint>
+    <link name="link_3">
+        <inertial>
+            <origin
+                    xyz="0 0.15 0"
+                    rpy="1.57 0 0" />
+            <mass
+                    value="0.5"/>
+            <inertia
+                    ixx="0.03"
+                    ixy="0"
+                    ixz="0"
+                    iyy="0"
+                    iyz="0"
+                    izz="0.03"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0" />
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.15 0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.3" radius="0.03"/>
+            </geometry>
+            <material name="grey"/>
+        </collision>
+    </link>
+    <joint name="end_joint" type="fixed">
+        <origin
+                xyz="0 0.3 0"
+                rpy="1.57 0 0"/>
+        <parent
+                link="link_3"/>
+        <child
+                link="end_link"/>
+    </joint>
+    <link name="end_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <cylinder length="0.0" radius="0.0"/>
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+</robot>

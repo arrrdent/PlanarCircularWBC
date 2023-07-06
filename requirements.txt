@@ -1,0 +1,8 @@
+eigenpy==3.1.0
+eiquadprog==1.2.6
+matplotlib==3.7.1
+meshcat==0.3.2
+numpy==1.24.4
+pybullet==3.2.5
+scipy==1.10.1
+tsid==1.7.0
