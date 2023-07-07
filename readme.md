@@ -38,6 +38,11 @@ Design a control system which:
 3) Realized whole trajectory control optimization via Crocoddyl library with open-loop testing in PyBullet  (position and torque control)
 4) Added comparison plots of torques with squared sum of torques and end effector tracking error.
 
+![Alt text](pybullet_manipulator.png?raw=true "Manipulator in PyBullet")
+
+![Alt text](Torques_comparison.png?raw=true "Torques comparison")
+
+
 ### Resume:
 
 - We can see that TSID can track trajectory good and have better overall squared sum of applied torques in such type of task.
