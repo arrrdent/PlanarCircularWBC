@@ -45,7 +45,7 @@ Design a control system which:
 
 ### Resume:
 
-- We can see that TSID can track trajectory good and have better overall squared sum of applied torques in such type of task.
+- We can see that TSID can track trajectory good and have better POSITION CONTROL squared sum of applied torques in such type of task. Crocoddyl have better cost for torque control scheme.
 
 - Interesting that in pybullet position control requires less torques that torque control =)
 
